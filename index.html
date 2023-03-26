@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Download de Vídeo ou Música do YouTube</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Download de Vídeo ou Música do YouTube</h1>
+        <form action="download.php" method="post">
+            <label for="url" lang="pt-br">Insira o link do vídeo ou da música:</label>
+            <input type="text" name="url" id="url" lang="pt-br" required>
+            <br>
+            <input type="submit" value="Baixar" name="submit">
+        </form>
+        <div id="download-link">
+            <?php
+            if (isset($_GET['file'])) {
+                $file = $_GET['file'];
+                echo "<p><a href='$file' download>Clique aqui para baixar o arquivo</a></p>";
+            }
+            ?>
+        </div>
+    </div>
+</body>
+</html>
